@@ -59,14 +59,12 @@ public class Question_Type_3_Solution {
 				if (prerequisites[i][j] == 1) indegree[j]++;
 			}
 		}
-		System.out.println("initialize: " + Arrays.toString(indegree));
-		//push the vertices which indegree is 0
+		//add the vertices to list which indegree is 0
 		for (int i = 0; i < tasks; i++) {
 			if (indegree[i] == 0) {
 				list.add(i);
 			}
 		}
-		System.out.println("initialize: " + list);
 		recursive_find_order(prerequisites, tasks, result, indegree, list);
 	}
 
@@ -74,9 +72,10 @@ public class Question_Type_3_Solution {
 			List<Integer> list) {
 		for (int i : list) {
 			result.add(i);
+			// 复制一个新list用于下次遍历, 新的list需要remove掉现在visit的元素, 并且添加新的入度为0的节点
 			List<Integer> list_for_next_recursive = deepCopy(list);
 			list_for_next_recursive.remove(new Integer(i));
-			// update indegree[], if vertice's indegree changes to 0, add to new list for next recursive
+			// update indegree
 			for (int j = 0; j < tasks; j++) {
 				if (prerequisites[i][j] == 1) {
 					indegree[j]--;
@@ -86,7 +85,7 @@ public class Question_Type_3_Solution {
 				}
 			}
 			recursive_find_order(prerequisites, tasks, result, indegree, list_for_next_recursive);
-			//backtracking
+			// backtracking
 			result.remove(new Integer(i));
 			for (int j = 0; j < tasks; j++) {
 				if (prerequisites[i][j] == 1) indegree[j]++;
@@ -115,15 +114,18 @@ public class Question_Type_3_Solution {
 
 	public static void main(String[] args) {
 		int[][] graph = edges_to_graph(3, new int[][] { new int[] { 0, 1 }, new int[] { 1, 2 } });
+		System.out.println("first case solution: ");
 		printOrders(3, graph);
 		System.out.println();
 
-		graph = edges_to_graph(4, new int[][] { new int[] { 3, 2 }, new int[] { 3, 0 }, new int[] { 2, 0 }, new int[] { 2, 1 } });	
+		graph = edges_to_graph(4, new int[][] { new int[] { 3, 2 }, new int[] { 3, 0 }, new int[] { 2, 0 }, new int[] { 2, 1 } });
+		System.out.println("second case solution: ");
 		printOrders(4, graph);
 		System.out.println();
 
 		graph = edges_to_graph(6, new int[][] { new int[] { 2, 5 }, new int[] { 0, 5 }, new int[] { 0, 4 },
 				new int[] { 1, 4 }, new int[] { 3, 2 }, new int[] { 1, 3 } });
+		System.out.println("third case solution: ");
 		printOrders(6, graph);
 		System.out.println();
 	}
