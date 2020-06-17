@@ -9,5 +9,5 @@
 ## Contents
 
 - [Topological Sort](./topological_sort/)
-- [Binary Search Tree](./binary_search_tree)
+- [Binary Search Tree](./binary_search_tree/)
 
