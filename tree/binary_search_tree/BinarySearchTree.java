@@ -28,7 +28,7 @@ public class BinarySearchTree {
 		return this.root;
 	}
 
-	public BinartSearchTree(int val) {
+	public BinarySearchTree(int val) {
 		this.root = new Node(val);
 	}
 
