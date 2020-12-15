@@ -1,6 +1,6 @@
 package heap;
 
-public class heap_sort {
+public class HeapSort {
 
     public static void main(String[] args) {
         int[] arr = {5,3,6,2,4,8,1};
