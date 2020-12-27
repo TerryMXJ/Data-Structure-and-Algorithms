@@ -19,7 +19,7 @@ public class Prim {
 
     private static void prim(int[][] graph, int i) {
         boolean[] visited = new boolean[graph.length];
-        // MST邻接顶点
+        // 记录最小生成树每个顶点的邻接顶点
         int[] adj_vex = new int[graph.length];
 
         // initialize
