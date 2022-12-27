@@ -1,10 +1,10 @@
 package array;
 
+/**
+ * 滑动窗口模板
+ */
+
 public class SlidingWindow {
-
-    public static void main(String[] args) {
-
-    }
 
     private int slidingWindow(int[] nums, int target) {
         // 创建头指针, 状态变量信息

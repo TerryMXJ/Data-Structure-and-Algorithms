@@ -17,9 +17,9 @@ public class InorderTraversal {
     }
 
     public static void main(String[] args) {
-        Stack<PreorderTraversal.TreeNode> stack = new Stack<>();
-        List<PreorderTraversal.TreeNode> res = new LinkedList<>();
-        PreorderTraversal.TreeNode tmp = new PreorderTraversal.TreeNode(0, null, null);
+        Stack<TreeNode> stack = new Stack<>();
+        List<TreeNode> res = new LinkedList<>();
+        TreeNode tmp = new TreeNode(0, null, null);
         while (!stack.isEmpty() || tmp!=null) {
             if (tmp!=null) {
                 stack.push(tmp);

@@ -21,7 +21,7 @@ public class Solution_1 {
 		List<Integer> result = new ArrayList<Integer>();
 		int[] indegree = new int[vertices_num];
 		Stack<Integer> stack = new Stack<Integer>();
-		// update indgree[]
+		// update indegree[]
 		for (int i = 0; i < vertices_num; i++) {
 			for (int j = 0; j < vertices_num; j++) {
 				if (graph[i][j] == 1) indegree[j]++;

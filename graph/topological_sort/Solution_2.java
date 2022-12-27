@@ -39,13 +39,13 @@ public class Solution_2 {
 		return result;
 	}
 	
-	private static void DFS(int[][] graph, int vertice, int vertices_num) {
-		visited[vertice] = true;
+	private static void DFS(int[][] graph, int vertex, int vertices_num) {
+		visited[vertex] = true;
 		for (int i = 0; i < vertices_num; i++) {
-			if (graph[vertice][i] == 1 && !visited[i])
+			if (graph[vertex][i] == 1 && !visited[i])
 				DFS(graph, i, vertices_num);
 		}
-		finish_time[vertice] = ++time;
+		finish_time[vertex] = ++time;
 	}
 	
 	// 通过有向边生成邻接矩阵
